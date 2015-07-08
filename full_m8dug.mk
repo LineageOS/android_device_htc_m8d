@@ -1,4 +1,5 @@
-# Copyright (C) 2011 The Android Open Source Project
+#
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,13 +23,14 @@
 #
 
 # Inherit m8-specific vendor tree
+# (let's share proprietary files with other m8 variants)
 $(call inherit-product-if-exists, vendor/htc/m8/m8-vendor.mk)
 
-# Inherit from m8
-$(call inherit-product, device/htc/m8/device.mk)
+# Inherit from m8dug
+$(call inherit-product, device/htc/m8dug/device.mk)
 
-PRODUCT_NAME := full_m8
-PRODUCT_DEVICE := m8
+PRODUCT_NAME := full_m8dug
+PRODUCT_DEVICE := m8dug
 PRODUCT_BRAND := htc
 PRODUCT_MANUFACTURER := htc
-PRODUCT_MODEL := m8
+PRODUCT_MODEL := m8dug

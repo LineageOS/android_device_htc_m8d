@@ -1,4 +1,5 @@
-# Copyright (C) 2014 The CyanogenMod Project
+#
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,6 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 #
 # This file sets variables that control the way modules are built
@@ -21,15 +23,11 @@
 #
 
 # Model Ids
-# 0P6B10000 - International
-# 0P6B12000 - AT&T/Dev Edition
-# 0P6B13000 - T-Mobile
-# 0P6B16000 - Telus/Rogers (Canada)
-# 0P6B20000 - Verizon
-# 0P6B70000 - Sprint
+# 0P6B61000 - Dual SIM variant (Chinese version)
+# 0P6B64000 - Dual SIM variant (European version)
 
-TARGET_OTA_ASSERT_DEVICE := htc_m8,htc_m8whl,htc_m8wl,m8,m8wl,m8wlv,m8vzw,m8whl,m8spr
-TARGET_BOARD_INFO_FILE ?= device/htc/m8/board-info.txt
+TARGET_OTA_ASSERT_DEVICE := htc_m8dug,m8dugl
+TARGET_BOARD_INFO_FILE ?= device/htc/m8dug/board-info.txt
 
 BOARD_VENDOR := htc
 
@@ -58,8 +56,8 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_m8_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8dug/mkbootimg.mk
+TARGET_KERNEL_CONFIG := cm_m8dug_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
@@ -77,7 +75,7 @@ AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8dug/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
@@ -91,7 +89,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 EXTENDED_FONT_FOOTPRINT := true
 
 # Graphics
-BOARD_EGL_CFG := device/htc/m8/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/m8dug/configs/egl.cfg
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
@@ -101,7 +99,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH := device/htc/m8/include
+TARGET_SPECIFIC_HEADER_PATH := device/htc/m8dug/include
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -114,7 +112,6 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/htc/m8/ril
 
 # RPC
 TARGET_NO_RPC := true
@@ -156,12 +153,12 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/m8dug/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/m8/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/m8dug/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     cir_fw_update.te \
@@ -188,13 +185,8 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     wpa.te
 
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
-
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8dug/releasetools
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+BOARD_HARDWARE_CLASS := device/htc/m8dug/cmhw

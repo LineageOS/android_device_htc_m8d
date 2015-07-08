@@ -1,4 +1,4 @@
-# Device configuration for HTC One (M8)
+# Device configuration for HTC One (M8) Dual SIM
 
 ## Spec Sheet
 
@@ -9,13 +9,13 @@
 | GPU                     | Adreno 330                        |
 | Memory                  | 2GB RAM                           |
 | Shipped Android Version | 4.4.2                             |
-| Storage                 | 16/32 GB                          |
+| Storage                 | 16 GB                             |
 | MicroSD                 | Up to 128GB                       |
 | Battery                 | 2600 mAh                          |
 | Dimensions              | 146.4 x 70.6 x 9.4 mm             |
 | Display                 | 1080 x 1920 pixels, Super LCD3    |
 | Camera                  | Dual 4 MP, 2688х1520 pixels       |
-| Release Date            | March 2014                        |
+| Release Date            | June 2014                         |
 
 
 ## Device Picture
@@ -26,7 +26,7 @@
 
 ```
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

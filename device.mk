@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 $(call inherit-product-if-exists, vendor/htc/m8-common/m8-common-vendor.mk)
 
 # overlays
-DEVICE_PACKAGE_OVERLAYS += device/htc/m8/overlay
+DEVICE_PACKAGE_OVERLAYS += device/htc/m8dug/overlay
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
 # Qcom init scripts for /etc
 PRODUCT_PACKAGES += \
    init.qcom.bt.bluedroid.sh \
-   init.qcom.bt.sh
+   init.qcom.bt.sh \
+   init.qcom.ril.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -73,7 +74,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    device/htc/m8/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
+    device/htc/m8dug/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -114,7 +115,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/htc/m8/configs/gps.conf:system/etc/gps.conf
+    device/htc/m8dug/configs/gps.conf:system/etc/gps.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -162,9 +163,9 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/htc/m8dug/configs/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := device/htc/m8dug/configs/nfcee_access_debug.xml
 endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
@@ -215,7 +216,7 @@ PRODUCT_PACKAGES += \
 
 # Variant linking script
 PRODUCT_COPY_FILES += \
-    device/htc/m8/releasetools/variant_script.sh:install/bin/variant_script.sh
+    device/htc/m8dug/releasetools/makelinks.sh:install/bin/makelinks.sh
 
 # Wifi firmware
 PRODUCT_PACKAGES += \
