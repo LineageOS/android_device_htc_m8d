@@ -55,6 +55,7 @@ persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=fluence
 tunnel.audio.encode=true
 use.voice.path.for.pcm.voip=false
+ro.multisim.set_audio_params=true
 
 # AV
 media.aac_51_output_enabled=true
