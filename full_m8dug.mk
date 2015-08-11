@@ -12,6 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 #
 # This file is the build configuration for a full Android
@@ -22,15 +23,15 @@
 # lines, full and maguro, hence its name.
 #
 
-# Inherit m8-specific vendor tree
-# (let's share proprietary files with other m8 variants)
-$(call inherit-product-if-exists, vendor/htc/m8/m8-vendor.mk)
+# Inherit m8dug-specific vendor tree
+$(call inherit-product-if-exists, vendor/htc/m8dug/m8dug-vendor.mk)
 
 # Inherit from m8dug
 $(call inherit-product, device/htc/m8dug/device.mk)
 
+# Set those variables here to overwrite the inherited values
 PRODUCT_NAME := full_m8dug
 PRODUCT_DEVICE := m8dug
 PRODUCT_BRAND := htc
 PRODUCT_MANUFACTURER := htc
-PRODUCT_MODEL := m8dug
+PRODUCT_MODEL := HTC One_M8 dual sim
