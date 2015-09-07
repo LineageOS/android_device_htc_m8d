@@ -23,15 +23,15 @@
 # lines, full and maguro, hence its name.
 #
 
-# Inherit m8dug-specific vendor tree
-$(call inherit-product-if-exists, vendor/htc/m8dug/m8dug-vendor.mk)
+# Inherit m8d-specific vendor tree
+$(call inherit-product-if-exists, vendor/htc/m8d/m8d-vendor.mk)
 
-# Inherit from m8dug
-$(call inherit-product, device/htc/m8dug/device.mk)
+# Inherit from m8d
+$(call inherit-product, device/htc/m8d/device.mk)
 
 # Set those variables here to overwrite the inherited values
-PRODUCT_NAME := full_m8dug
-PRODUCT_DEVICE := m8dug
+PRODUCT_NAME := full_m8d
+PRODUCT_DEVICE := m8d
 PRODUCT_BRAND := htc
 PRODUCT_MANUFACTURER := htc
 PRODUCT_MODEL := HTC One_M8 dual sim

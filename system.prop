@@ -1,13 +1,5 @@
 # RIL
 rild.libargs=-d /dev/smd0
-ro.ril.hsdpa.category=24
-ro.ril.enable.pre_r8fd=1
-ro.ril.enable.sdr=1
-ro.ril.enable.r8fd=1
-ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420,27202
-ro.telephony.default_network=9
-persist.radio.multisim.config=dsds
-persist.radio.dont_use_dsd=true
 
 # Audio
 ro.multisim.set_audio_params=true

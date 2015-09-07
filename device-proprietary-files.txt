@@ -3,6 +3,8 @@
 # Executables
 blobs/dug/bin/netmgrd
 blobs/dug/bin/qmuxd
+blobs/dwg/bin/netmgrd
+blobs/dwg/bin/qmuxd
 
 # Qualcomm / HTC common libs
 blobs/dug/vendor/lib/libdiag.so
@@ -21,8 +23,27 @@ blobs/dug/vendor/lib/libqmi_csi.so
 blobs/dug/vendor/lib/libqmi_csvt_srvc.so
 blobs/dug/vendor/lib/libqmi_encdec.so
 blobs/dug/vendor/lib/libqmiservices.so
+blobs/dwg/vendor/lib/libdiag.so
+blobs/dwg/vendor/lib/libdsi_netctrl.so
+blobs/dwg/vendor/lib/libdsnetutils.so
+blobs/dwg/vendor/lib/libdsutils.so
+blobs/dwg/vendor/lib/libidl.so
+blobs/dwg/vendor/lib/libqcci_legacy.so
+blobs/dwg/vendor/lib/libqdi.so
+blobs/dwg/vendor/lib/libqdp.so
+blobs/dwg/vendor/lib/libqmi.so
+blobs/dwg/vendor/lib/libqmi_cci.so
+blobs/dwg/vendor/lib/libqmi_client_qmux.so
+blobs/dwg/vendor/lib/libqmi_common_so.so
+blobs/dwg/vendor/lib/libqmi_csi.so
+blobs/dwg/vendor/lib/libqmi_csvt_srvc.so
+blobs/dwg/vendor/lib/libqmi_encdec.so
+blobs/dwg/vendor/lib/libqmiservices.so
 
 # Radio
 blobs/dug/vendor/lib/libnetmgr.so
 blobs/dug/vendor/lib/libril-qc-qmi-1.so
 blobs/dug/vendor/lib/libril-qcril-hook-oem.so
+blobs/dwg/vendor/lib/libnetmgr.so
+blobs/dwg/vendor/lib/libril-qc-qmi-1.so
+blobs/dwg/vendor/lib/libril-qcril-hook-oem.so

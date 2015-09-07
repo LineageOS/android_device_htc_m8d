@@ -30,14 +30,15 @@
 -include device/htc/m8-common/BoardConfigCommon.mk
 
 # Model Ids (Dual SIM variants)
-# 0P6B61000 - Chinese version
-# 0P6B64000 - European version
+# 0P6B41000 - Chinese CDMA version
+# 0P6B61000 - Chinese GSM version
+# 0P6B64000 - European GSM version
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := htc_m8dug,m8dugl
+TARGET_OTA_ASSERT_DEVICE := htc_m8dug,htc_m8dwg,m8dugl,m8dwgl
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8dug/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8d/mkbootimg.mk
 TARGET_KERNEL_CONFIG := cm_m8dug_defconfig
 
 # Audio
@@ -45,11 +46,16 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_HTC_DUAL_SIM := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8dug/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8d/bluetooth
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3087007744
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11140071424
 
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_m8d
+TARGET_LIBINIT_DEFINES_FILE := device/htc/m8d/init/init_m8d.c
+
 # Inherit from the proprietary version
--include vendor/htc/m8dug/BoardConfigVendor.mk
+-include vendor/htc/m8d/BoardConfigVendor.mk
