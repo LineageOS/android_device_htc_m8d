@@ -91,8 +91,17 @@ void vendor_load_properties()
 
     property_get("ro.boot.mid", bootmid);
 
-    if (strstr(bootmid, "0P6B61000") || strstr(bootmid, "0P6B64000")) {
-        /* m8dug */
+    if (strstr(bootmid, "0P6B61000")) {
+        /* m8dug (china unicom) */
+        dualsim_properties("dsds");
+        gsm_properties("9");
+        property_set("ro.product.model", "m8dug");
+        property_set("ro.build.fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
+        property_set("ro.build.description", "4.25.1402.6 CL480430 release-keys");
+        property_set("ro.product.device", "htc_m8dug");
+        property_set("ro.build.product", "htc_m8dug");
+    } else if (strstr(bootmid, "0P6B64000")) {
+        /* m8dug (europe) */
         dualsim_properties("dsds");
         gsm_properties("9");
         property_set("ro.product.model", "m8dug");
@@ -101,7 +110,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
     } else if (strstr(bootmid, "0P6B41000")) {
-        /* m8dwg */
+        /* m8dwg (china telecom) */
         dualsim_properties("dsda");
         cdma_properties("0", "10");
         property_set("ro.product.model", "m8dwg");
