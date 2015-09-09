@@ -38,6 +38,8 @@ void common_properties()
 {
     property_set("rild.libargs", "-d /dev/smd0");
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
+    property_set("ro.ril.enable.a52", "0");
+    property_set("ro.ril.enable.a53", "1");
     property_set("ro.ril.enable.pre_r8fd", "1");
     property_set("ro.ril.enable.r8fd", "1");
 }
@@ -57,8 +59,6 @@ void cdma_properties(char default_cdma_sub[], char default_network[])
     property_set("ro.ril.oem.ecclist", "110,112,119,120,911,999");
     property_set("ro.ril.oem.normalcall.ecclist", "110,119,120,999");
     property_set("ro.ril.oem.nosim.ecclist", "110,112,119,120,911,999,08,000,118,122");
-    property_set("ro.ril.enable.a52", "0");
-    property_set("ro.ril.enable.a53", "1");
     property_set("ro.ril.gprsclass", "10");
     property_set("ro.ril.set.mtusize", "1420");
 
@@ -72,10 +72,12 @@ void cdma_properties(char default_cdma_sub[], char default_network[])
 void gsm_properties(char default_network[])
 {
     property_set("ro.telephony.default_network", default_network);
+
     property_set("ro.ril.hsdpa.category", "24");
     property_set("ro.ril.hsxpa", "4");
     property_set("ro.ril.disable.cpc", "1");
     property_set("ro.ril.enable.sdr", "1");
+    property_set("ro.ril.fast.dormancy.rule", "1");
 }
 
 void vendor_load_properties()
@@ -98,6 +100,7 @@ void vendor_load_properties()
         dualsim_properties("dsds");
         gsm_properties("9");
         property_set("ro.product.model", "HTC M8e");
+        property_set("ro.ril.ltefgi", "1594883712");
         property_set("ro.build.fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
         property_set("ro.build.description", "4.25.1402.6 CL480430 release-keys");
         property_set("ro.product.device", "htc_m8dug");
@@ -108,6 +111,12 @@ void vendor_load_properties()
         dualsim_properties("dsds");
         gsm_properties("9");
         property_set("ro.product.model", "HTC One_M8 dual sim");
+        property_set("ro.ril.ltefgi", "1578105984");
+        property_set("ro.ril.enable.dtm", "0");
+        property_set("ro.ril.enable.enhance.search", "1");
+        property_set("ro.ril.enable.managed.roaming", "1");
+        property_set("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
+        property_set("ro.ril.show.all.plmn", "1");
         property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:5.0.2/LRX22G/499095.15:user/release-keys");
         property_set("ro.build.description", "4.30.401.15 CL499095 release-keys");
         property_set("ro.product.device", "htc_m8dug");
