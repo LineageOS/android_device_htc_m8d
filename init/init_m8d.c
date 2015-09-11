@@ -95,7 +95,7 @@ void vendor_load_properties()
         /* m8dug (china unicom) */
         dualsim_properties("dsds");
         gsm_properties("9");
-        property_set("ro.product.model", "m8dug");
+        property_set("ro.product.model", "HTC M8e");
         property_set("ro.build.fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
         property_set("ro.build.description", "4.25.1402.6 CL480430 release-keys");
         property_set("ro.product.device", "htc_m8dug");
@@ -104,7 +104,7 @@ void vendor_load_properties()
         /* m8dug (europe) */
         dualsim_properties("dsds");
         gsm_properties("9");
-        property_set("ro.product.model", "m8dug");
+        property_set("ro.product.model", "HTC One_M8 dual sim");
         property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:5.0.2/LRX22G/499095.15:user/release-keys");
         property_set("ro.build.description", "4.30.401.15 CL499095 release-keys");
         property_set("ro.product.device", "htc_m8dug");
@@ -113,7 +113,7 @@ void vendor_load_properties()
         /* m8dwg (china telecom) */
         dualsim_properties("dsda");
         cdma_properties("0", "10");
-        property_set("ro.product.model", "m8dwg");
+        property_set("ro.product.model", "HTC M8d");
         property_set("ro.build.fingerprint", "htc/htccn_chs_ct/htc_m8dwg:5.0.2/LRX22G/507502.3:user/release-keys");
         property_set("ro.build.description", "4.31.1401.3 CL507502 release-keys");
         property_set("ro.product.device", "htc_m8dwg");
