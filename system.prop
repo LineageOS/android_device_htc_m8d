@@ -1,5 +1,0 @@
-# RIL
-rild.libargs=-d /dev/smd0
-
-# Audio
-ro.multisim.set_audio_params=true
