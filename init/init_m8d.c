@@ -34,10 +34,19 @@
 #include "log.h"
 #include "util.h"
 
+void common_properties()
+{
+    property_set("rild.libargs", "-d /dev/smd0");
+    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
+    property_set("ro.ril.enable.pre_r8fd", "1");
+    property_set("ro.ril.enable.r8fd", "1");
+}
+
 void dualsim_properties(char multisim_config[])
 {
     property_set("persist.radio.multisim.config", multisim_config);
     property_set("persist.radio.dont_use_dsd", "true");
+    property_set("ro.multisim.set_audio_params", "true");
 }
 
 void cdma_properties(char default_cdma_sub[], char default_network[])
@@ -55,12 +64,8 @@ void cdma_properties(char default_cdma_sub[], char default_network[])
 
     property_set("telephony.lteOnCdmaDevice", "1");
     property_set("ro.ril.hsdpa.category", "10");
-    property_set("ro.ril.hsupa.category", "6");
     property_set("ro.ril.hsxpa", "2");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
     property_set("ro.ril.enable.sdr", "0");
-    property_set("ro.ril.enable.pre_r8fd", "1");
-    property_set("ro.ril.enable.r8fd", "1");
     property_set("ro.ril.disable.sync_pf", "1");
 }
 
@@ -68,13 +73,9 @@ void gsm_properties(char default_network[])
 {
     property_set("ro.telephony.default_network", default_network);
     property_set("ro.ril.hsdpa.category", "24");
-    property_set("ro.ril.hsupa.category", "6");
     property_set("ro.ril.hsxpa", "4");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
     property_set("ro.ril.disable.cpc", "1");
     property_set("ro.ril.enable.sdr", "1");
-    property_set("ro.ril.enable.pre_r8fd", "1");
-    property_set("ro.ril.enable.r8fd", "1");
 }
 
 void vendor_load_properties()
@@ -93,6 +94,7 @@ void vendor_load_properties()
 
     if (strstr(bootmid, "0P6B61000")) {
         /* m8dug (china unicom) */
+        common_properties();
         dualsim_properties("dsds");
         gsm_properties("9");
         property_set("ro.product.model", "HTC M8e");
@@ -102,6 +104,7 @@ void vendor_load_properties()
         property_set("ro.build.product", "htc_m8dug");
     } else if (strstr(bootmid, "0P6B64000")) {
         /* m8dug (europe) */
+        common_properties();
         dualsim_properties("dsds");
         gsm_properties("9");
         property_set("ro.product.model", "HTC One_M8 dual sim");
@@ -111,6 +114,7 @@ void vendor_load_properties()
         property_set("ro.build.product", "htc_m8dug");
     } else if (strstr(bootmid, "0P6B41000")) {
         /* m8dwg (china telecom) */
+        common_properties();
         dualsim_properties("dsda");
         cdma_properties("0", "10");
         property_set("ro.product.model", "HTC M8d");
