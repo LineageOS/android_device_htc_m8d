@@ -73,6 +73,7 @@ void gsm_properties(char default_network[])
 {
     property_set("ro.telephony.default_network", default_network);
 
+    property_set("telephony.lteOnGsmDevice", "1");
     property_set("ro.ril.hsdpa.category", "24");
     property_set("ro.ril.hsxpa", "4");
     property_set("ro.ril.disable.cpc", "1");
