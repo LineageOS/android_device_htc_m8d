@@ -20,7 +20,6 @@ blobs/dug/vendor/lib/libqmi_cci.so
 blobs/dug/vendor/lib/libqmi_client_qmux.so
 blobs/dug/vendor/lib/libqmi_common_so.so
 blobs/dug/vendor/lib/libqmi_csi.so
-blobs/dug/vendor/lib/libqmi_csvt_srvc.so
 blobs/dug/vendor/lib/libqmi_encdec.so
 blobs/dug/vendor/lib/libqmiservices.so
 blobs/dwg/vendor/lib/libdiag.so
