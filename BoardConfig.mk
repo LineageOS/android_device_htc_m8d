@@ -30,9 +30,9 @@
 -include device/htc/m8-common/BoardConfigCommon.mk
 
 # Model Ids (Dual SIM variants)
-# 0P6B41000 - Chinese CDMA version
-# 0P6B61000 - Chinese GSM version
-# 0P6B64000 - European GSM version
+# 0P6B41000 - Chinese (China Telecom) LTE/EV-DO/CDMA + GSM version
+# 0P6B61000 - Chinese (China Unicom) LTE/WCDMA/GSM + GSM version
+# 0P6B64000 / 0P6B68000 - International LTE/WCDMA/GSM + GSM version
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := htc_m8dug,htc_m8dwg,m8dugl,m8dwgl
