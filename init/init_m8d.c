@@ -106,8 +106,8 @@ void vendor_load_properties()
         property_set("ro.build.description", "4.26.1402.4 CL506716 release-keys");
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
-    } else if (strstr(bootmid, "0P6B64000")) {
-        /* m8dug (europe) */
+    } else if (strstr(bootmid, "0P6B64000") || strstr(bootmid, "0P6B68000")) {
+        /* m8dug (international) */
         common_properties();
         dualsim_properties("dsds");
         gsm_properties("9");
