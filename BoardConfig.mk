@@ -48,14 +48,14 @@ AUDIO_FEATURE_HTC_DUAL_SIM := true
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8d/bluetooth
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/htc/m8d/init/init_m8d.c
+TARGET_UNIFIED_DEVICE := true
+
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3087007744
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11140071424
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8d
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8d/init/init_m8d.c
 
 # Inherit from the proprietary version
 -include vendor/htc/m8d/BoardConfigVendor.mk
