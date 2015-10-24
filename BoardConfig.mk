@@ -54,7 +54,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11140071424
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_m8d
+TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/htc/m8d/init/init_m8d.c
 
 # Inherit from the proprietary version
