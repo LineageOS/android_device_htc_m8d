@@ -22,6 +22,8 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
+vendor/lib/libsmemlog.so
+vendor/lib/libsystem_health_mon.so
 
 # Radio
 vendor/lib/libnetmgr.so
