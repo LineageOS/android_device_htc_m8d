@@ -1,11 +1,8 @@
 # Device-specific proprietary files
 
-# Executables
+# Radio binaries
 bin/netmgrd
 bin/qmuxd
-
-# GPS
-lib/libgps.utils.so
 
 # Qualcomm / HTC common libs
 vendor/lib/libdiag.so
