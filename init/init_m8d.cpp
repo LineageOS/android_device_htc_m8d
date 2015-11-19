@@ -42,6 +42,7 @@ void common_properties()
     property_set("ro.ril.enable.a53", "1");
     property_set("ro.ril.enable.pre_r8fd", "1");
     property_set("ro.ril.enable.r8fd", "1");
+    property_set("ro.telephony.ril_class", "m8dRIL");
 }
 
 void dualsim_properties(char const multisim_config[])
