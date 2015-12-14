@@ -17,6 +17,7 @@
 package com.android.internal.telephony;
 
 import android.content.Context;
+import android.os.AsyncResult;
 import android.os.Message;
 import android.os.Parcel;
 import android.os.SystemProperties;
@@ -45,6 +46,16 @@ public class M8dRIL extends RIL {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
 
         processRILPreferredNetworkType(mInstanceId, preferredNetworkType);
+    }
+
+    @Override
+    public void getRadioCapability(Message response) {
+        riljLog("getRadioCapability: returning static radio capability");
+        if (response != null) {
+            Object ret = makeStaticRadioCapability();
+            AsyncResult.forMessage(response, ret, null);
+            response.sendToTarget();
+        }
     }
 
     @Override
