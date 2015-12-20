@@ -37,8 +37,8 @@ public class M8dRIL extends RIL {
     private static final String HTCRIL_LOG_TAG = "M8dRIL";
     private static final boolean HTCRIL_LOGD = false;
 
-    public M8dRIL(Context context, int networkMode, int cdmaSubscription) {
-        super(context, networkMode, cdmaSubscription, null);
+    public M8dRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
+        this(context, preferredNetworkType, cdmaSubscription, null);
     }
 
     public M8dRIL(Context context, int preferredNetworkType,
