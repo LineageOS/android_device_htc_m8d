@@ -50,6 +50,7 @@ void dualsim_properties(char const multisim_config[])
     property_set("persist.radio.multisim.config", multisim_config);
     property_set("persist.radio.dont_use_dsd", "true");
     property_set("ro.multisim.set_audio_params", "true");
+    property_set("ro.ril.multi_rat_capable", "true");
     property_set("ro.telephony.ril.config", "simactivation");
 }
 
