@@ -36,8 +36,9 @@
 
 void common_properties()
 {
+    property_set("persist.radio.apm_sim_not_pwdn", "1");
     property_set("rild.libargs", "-d /dev/smd0");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
+    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
     property_set("ro.ril.enable.a52", "0");
     property_set("ro.ril.enable.a53", "1");
     property_set("ro.ril.enable.pre_r8fd", "1");
@@ -119,8 +120,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.ril.enable.managed.roaming", "1");
         property_set("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
         property_set("ro.ril.show.all.plmn", "1");
-        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:5.0.2/LRX22G/499095.15:user/release-keys");
-        property_set("ro.build.description", "4.30.401.15 CL499095 release-keys");
+        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
+        property_set("ro.build.description", "6.16.401.101 CL675548 release-keys");
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
     } else if (strstr(bootmid, "0P6B41000")) {
