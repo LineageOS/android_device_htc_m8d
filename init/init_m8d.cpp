@@ -119,8 +119,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.ril.enable.managed.roaming", "1");
         property_set("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
         property_set("ro.ril.show.all.plmn", "1");
-        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:5.0.2/LRX22G/499095.15:user/release-keys");
-        property_set("ro.build.description", "4.30.401.15 CL499095 release-keys");
+        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
+        property_set("ro.build.description", "6.16.401.101 CL675548 release-keys");
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
     } else if (strstr(bootmid, "0P6B41000")) {
