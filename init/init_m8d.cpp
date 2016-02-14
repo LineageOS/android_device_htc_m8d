@@ -36,7 +36,6 @@
 
 void common_properties()
 {
-    property_set("persist.radio.apm_sim_not_pwdn", "1");
     property_set("rild.libargs", "-d /dev/smd0");
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
     property_set("ro.ril.enable.a52", "0");
