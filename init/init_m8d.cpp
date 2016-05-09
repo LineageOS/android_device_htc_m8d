@@ -83,7 +83,7 @@ void gsm_properties(char const default_network[])
     property_set("ro.ril.fast.dormancy.rule", "1");
 }
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties()
 {
     char platform[PROP_VALUE_MAX];
     char bootmid[PROP_VALUE_MAX];

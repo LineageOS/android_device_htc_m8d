@@ -52,9 +52,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3087007744
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11140071424
 
 # Vendor Init
+TARGET_INIT_VENDOR_LIB := libinit_m8d
+TARGET_RECOVERY_DEVICE_MODULES := libinit_m8d
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8d/init/init_m8d.cpp
 
 # Enable dex pre-optimization to speed up initial boot sequence
 ifeq ($(HOST_OS),linux)
