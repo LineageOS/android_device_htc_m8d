@@ -129,8 +129,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         dualsim_properties("dsda");
         cdma_properties("0,1", "10");
         property_set("ro.product.model", "HTC M8d");
-        property_set("ro.build.fingerprint", "htc/htccn_chs_ct/htc_m8dwg:5.0.2/LRX22G/507502.3:user/release-keys");
-        property_set("ro.build.description", "4.31.1401.3 CL507502 release-keys");
+        property_set("ro.build.fingerprint", "htc/htccn_chs_ct/htc_m8dwg:6.0/MRA58K/710963.3:user/release-keys");
+        property_set("ro.build.description", "6.22.1401.3 CL710963 release-keys");
         property_set("ro.product.device", "htc_m8dwg");
         property_set("ro.build.product", "htc_m8dwg");
     }
