@@ -14,8 +14,5 @@
 # limitations under the License.
 #
 
-# Local overlays
-DEVICE_PACKAGE_OVERLAYS += device/htc/m8d/overlay
-
 # Inherit from m8-common
 $(call inherit-product, device/htc/m8-common/m8-common.mk)

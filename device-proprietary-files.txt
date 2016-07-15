@@ -37,7 +37,6 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
-framework/qti-telephony-common.jar
 lib/libmdmdetect.so
 -lib/libril.so
 vendor/lib/libcneapiclient.so
