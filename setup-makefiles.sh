@@ -3,6 +3,7 @@
 set -e
 
 export DEVICE=m8d
+export DEVICE_COMMON=m8-common
 export VENDOR=htc
 
-./../m8-common/setup-makefiles.sh $@
+./../$DEVICE_COMMON/setup-makefiles.sh $@
