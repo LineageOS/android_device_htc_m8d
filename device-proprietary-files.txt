@@ -1,6 +1,7 @@
 # Device-specific proprietary files
 
 # GPS
+etc/gps.conf
 lib/hw/gps.default.so
 lib/libgps.utils.so
 lib/libloc_api_v02.so
