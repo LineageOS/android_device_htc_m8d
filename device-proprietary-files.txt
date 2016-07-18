@@ -1,6 +1,10 @@
 # Device-specific proprietary files
 
 # GPS
+etc/flp.conf
+etc/gps.conf
+etc/izat.conf
+etc/sap.conf
 lib/hw/gps.default.so
 lib/libgps.utils.so
 lib/libloc_api_v02.so
