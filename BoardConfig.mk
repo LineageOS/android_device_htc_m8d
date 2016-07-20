@@ -41,7 +41,6 @@ TARGET_OTA_ASSERT_DEVICE := htc_m8dug,htc_m8dwg,m8dugl,m8dwgl
 TARGET_KERNEL_CONFIG := cm_m8dug_defconfig
 
 # Audio
-AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_HTC_DUAL_SIM := true
 
 # Bluetooth
