@@ -85,18 +85,17 @@ void gsm_properties(char const default_network[])
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char bootmid[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    int rc;
+    std::string platform;
+    std::string bootmid;
+    std::string device;
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
+    platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
         return;
 
-    property_get("ro.boot.mid", bootmid);
+    bootmid = property_get("ro.boot.mid");
 
-    if (strstr(bootmid, "0P6B61000")) {
+    if (bootmid == "0P6B61000") {
         /* m8dug (china unicom) */
         common_properties();
         dualsim_properties("dsds");
@@ -107,7 +106,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "4.25.1402.6 CL480430 release-keys");
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
-    } else if (strstr(bootmid, "0P6B64000") || strstr(bootmid, "0P6B68000")) {
+    } else if (bootmid == "0P6B64000" || bootmid == "0P6B68000") {
         /* m8dug (international) */
         common_properties();
         dualsim_properties("dsds");
@@ -123,7 +122,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "6.16.401.101 CL675548 release-keys");
         property_set("ro.product.device", "htc_m8dug");
         property_set("ro.build.product", "htc_m8dug");
-    } else if (strstr(bootmid, "0P6B41000")) {
+    } else if (bootmid == "0P6B41000") {
         /* m8dwg (china telecom) */
         common_properties();
         dualsim_properties("dsda");
@@ -135,6 +134,6 @@ void vendor_load_properties()
         property_set("ro.build.product", "htc_m8dwg");
     }
 
-    property_get("ro.product.device", device);
-    ERROR("Found bootmid %s setting build properties for %s device\n", bootmid, device);
+    device = property_get("ro.product.device");
+    ERROR("Found bootmid %s setting build properties for %s device\n", bootmid.c_str(), device.c_str());
 }
