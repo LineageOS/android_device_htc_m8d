@@ -16,3 +16,7 @@
 
 # Inherit from m8-common
 $(call inherit-product, device/htc/m8-common/m8-common.mk)
+
+# Init
+PRODUCT_PACKAGES += \
+    init.variant.rc
