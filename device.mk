@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/htc/m8d/m8d-vendor.mk)
+
 # Inherit from m8-common
 $(call inherit-product, device/htc/m8-common/m8-common.mk)
 
