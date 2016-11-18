@@ -20,9 +20,6 @@ $(call inherit-product, device/htc/m8d/device.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := cm_m8d
 PRODUCT_DEVICE := m8d
