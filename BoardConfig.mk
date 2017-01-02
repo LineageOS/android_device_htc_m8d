@@ -38,7 +38,7 @@
 TARGET_OTA_ASSERT_DEVICE := htc_m8dug,htc_m8dwg,m8dugl,m8dwgl
 
 # Kernel
-TARGET_KERNEL_CONFIG := cm_m8dug_defconfig
+TARGET_KERNEL_CONFIG := lineageos_m8dug_defconfig
 
 # Audio
 AUDIO_FEATURE_HTC_DUAL_SIM := true
