@@ -55,6 +55,7 @@ TARGET_INIT_VENDOR_LIB := libinit_m8d
 TARGET_RECOVERY_DEVICE_MODULES := libinit_m8d
 TARGET_UNIFIED_DEVICE := true
 
+WITH_DEXPREOPT := false
 # Enable dex pre-optimization to speed up initial boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(WITH_DEXPREOPT),)
