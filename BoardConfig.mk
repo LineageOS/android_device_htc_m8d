@@ -55,17 +55,5 @@ TARGET_INIT_VENDOR_LIB := libinit_m8d
 TARGET_RECOVERY_DEVICE_MODULES := libinit_m8d
 TARGET_UNIFIED_DEVICE := true
 
-# Enable dex pre-optimization to speed up initial boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_PIC := true
-    ifneq ($(TARGET_BUILD_VARIANT),user)
-      # Retain classes.dex in APK's for non-user builds
-      DEX_PREOPT_DEFAULT := nostripping
-    endif
-  endif
-endif
-
 # Inherit from the proprietary version
 -include vendor/htc/m8d/BoardConfigVendor.mk
