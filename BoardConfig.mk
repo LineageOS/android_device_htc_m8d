@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2015 The CyanogenMod Project
+#               2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,7 +54,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11140071424
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_m8d
 TARGET_RECOVERY_DEVICE_MODULES := libinit_m8d
-TARGET_UNIFIED_DEVICE := true
 
 # Inherit from the proprietary version
 -include vendor/htc/m8d/BoardConfigVendor.mk
