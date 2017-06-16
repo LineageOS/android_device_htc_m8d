@@ -113,38 +113,38 @@ void vendor_load_properties()
         common_properties();
         dualsim_properties("dsds");
         gsm_properties("9,1");
-        property_set("ro.product.model", "HTC M8e");
+        property_override("ro.product.model", "HTC M8e");
         property_set("ro.ril.ltefgi", "1594883712");
-        property_set("ro.build.fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
-        property_set("ro.build.description", "4.25.1402.6 CL480430 release-keys");
-        property_set("ro.product.device", "htc_m8dug");
-        property_set("ro.build.product", "htc_m8dug");
+        property_override("ro.build.fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
+        property_override("ro.build.description", "4.25.1402.6 CL480430 release-keys");
+        property_override("ro.product.device", "htc_m8dug");
+        property_override("ro.build.product", "htc_m8dug");
     } else if (bootmid == "0P6B64000" || bootmid == "0P6B68000") {
         /* m8dug (international) */
         common_properties();
         dualsim_properties("dsds");
         gsm_properties("9,1");
-        property_set("ro.product.model", "HTC One_M8 dual sim");
+        property_override("ro.product.model", "HTC One_M8 dual sim");
         property_set("ro.ril.ltefgi", "1578105984");
         property_set("ro.ril.enable.dtm", "0");
         property_set("ro.ril.enable.enhance.search", "1");
         property_set("ro.ril.enable.managed.roaming", "1");
         property_set("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
         property_set("ro.ril.show.all.plmn", "1");
-        property_set("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
-        property_set("ro.build.description", "6.16.401.101 CL675548 release-keys");
-        property_set("ro.product.device", "htc_m8dug");
-        property_set("ro.build.product", "htc_m8dug");
+        property_override("ro.build.fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
+        property_override("ro.build.description", "6.16.401.101 CL675548 release-keys");
+        property_override("ro.product.device", "htc_m8dug");
+        property_override("ro.build.product", "htc_m8dug");
     } else if (bootmid == "0P6B41000") {
         /* m8dwg (china telecom) */
         common_properties();
         dualsim_properties("dsda");
         cdma_properties("0,1", "10");
-        property_set("ro.product.model", "HTC M8d");
-        property_set("ro.build.fingerprint", "htc/htccn_chs_ct/htc_m8dwg:6.0/MRA58K/710963.3:user/release-keys");
-        property_set("ro.build.description", "6.22.1401.3 CL710963 release-keys");
-        property_set("ro.product.device", "htc_m8dwg");
-        property_set("ro.build.product", "htc_m8dwg");
+        property_override("ro.product.model", "HTC M8d");
+        property_override("ro.build.fingerprint", "htc/htccn_chs_ct/htc_m8dwg:6.0/MRA58K/710963.3:user/release-keys");
+        property_override("ro.build.description", "6.22.1401.3 CL710963 release-keys");
+        property_override("ro.product.device", "htc_m8dwg");
+        property_override("ro.build.product", "htc_m8dwg");
     }
 
     device = property_get("ro.product.device");
