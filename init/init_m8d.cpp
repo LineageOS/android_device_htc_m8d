@@ -31,10 +31,15 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+
 #include "property_service.h"
+#include "vendor_init.h"
 #include "log.h"
 #include "util.h"
+
+namespace android {
+namespace init {
 
 void property_override(char const prop[], char const value[])
 {
@@ -102,11 +107,11 @@ void vendor_load_properties()
     std::string bootmid;
     std::string device;
 
-    platform = property_get("ro.board.platform");
+    platform = android::base::GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    bootmid = property_get("ro.boot.mid");
+    bootmid = android::base::GetProperty("ro.boot.mid", "");
 
     if (bootmid == "0P6B61000") {
         /* m8dug (china unicom) */
@@ -147,6 +152,9 @@ void vendor_load_properties()
         property_override("ro.build.product", "htc_m8dwg");
     }
 
-    device = property_get("ro.product.device");
+    device = android::base::GetProperty("ro.product.device", "");
     ERROR("Found bootmid %s setting build properties for %s device\n", bootmid.c_str(), device.c_str());
 }
+
+}  // namespace init
+}  // namespace android
