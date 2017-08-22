@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015-2016 The CyanogenMod Project
+#               2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +20,10 @@ $(call inherit-product-if-exists, vendor/htc/m8d/m8d-vendor.mk)
 
 # Inherit from m8-common
 $(call inherit-product, device/htc/m8-common/m8-common.mk)
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    device/htc/m8d/manifest.xml:system/vendor/manifest.xml
 
 # Init
 PRODUCT_PACKAGES += \
