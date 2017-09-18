@@ -25,5 +25,5 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_NAME := lineage_m8d
 PRODUCT_DEVICE := m8d
 PRODUCT_BRAND := htc
-PRODUCT_MANUFACTURER := htc
 PRODUCT_MODEL := m8d
+PRODUCT_MANUFACTURER := HTC
