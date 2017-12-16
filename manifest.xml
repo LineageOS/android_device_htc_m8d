@@ -33,6 +33,7 @@
         <interface>
             <name>ICameraProvider</name>
             <instance>default</instance>
+            <instance>legacy/0</instance>
         </interface>
     </hal>
     <hal format="hidl">
