@@ -1,5 +1,8 @@
 # Device-specific proprietary files
 
+# QTI telephony extension - from tissot - OPR1.170623.026
+-framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
+
 # RIL - pinned to HTC package 6.16.401.101 version
 bin/netmgrd:vendor/bin/netmgrd|0027399f17fc90fd4bb6e0ab6c44d07bc07db2c3
 bin/qmuxd:vendor/bin/qmuxd|b48d9d33faed20925077619faa028b1c68139a1f
