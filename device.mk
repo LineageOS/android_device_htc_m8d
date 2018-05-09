@@ -23,3 +23,11 @@ $(call inherit-product, device/htc/m8-common/m8-common.mk)
 # Init
 PRODUCT_PACKAGES += \
     init.variant.rc
+
+# Telephony
+PRODUCT_PACKAGES += \
+    qti-telephony-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
