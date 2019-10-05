@@ -1,12 +1,4 @@
 # Device-specific proprietary files
 
 # RIL - pinned to HTC package 6.16.401.101 version
-bin/netmgrd:vendor/bin/netmgrd|0027399f17fc90fd4bb6e0ab6c44d07bc07db2c3
-bin/qmuxd:vendor/bin/qmuxd|b48d9d33faed20925077619faa028b1c68139a1f
-lib/libmdmdetect.so:vendor/lib/libmdmdetect.so|99c1c990145b0c3480b7e8ef7b4d833c136417ce
-vendor/lib/libcneapiclient.so|7e0460cf5fdd079d384836d581117ba25bd882db
-vendor/lib/libconfigdb.so|8f8da7f8b0a74fb393b9455c95026c6f2fc628ea
-vendor/lib/libnetmgr.so|9d8ba8eff62e7e93b343928ebb11e1d35174349d
-vendor/lib/libperipheral_client.so|63a544172680ef3fab7c94df950ce83c33a1c1af
 vendor/lib/libril-qc-qmi-1.so|0df40b0ee4465890d25a5b74ccb53e423e88cf70
-vendor/lib/libril-qcril-hook-oem.so|2d8cadfe0e77062e27586b35ee50ff183c71a1ec
