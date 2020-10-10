@@ -35,11 +35,9 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 
 std::vector<std::string> ro_props_default_source_order = {
     "",
@@ -62,51 +60,51 @@ void property_override(char const prop[], char const value[], bool add = true)
 
 void common_properties()
 {
-    property_set("rild.libargs", "-d /dev/smd0");
-    property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
-    property_set("ro.ril.enable.a52", "0");
-    property_set("ro.ril.enable.a53", "1");
-    property_set("ro.ril.enable.pre_r8fd", "1");
-    property_set("ro.ril.enable.r8fd", "1");
-    property_set("ro.ril.telephony.mqanelements", "5");
+    property_override("rild.libargs", "-d /dev/smd0");
+    property_override("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,23594,27202,27205");
+    property_override("ro.ril.enable.a52", "0");
+    property_override("ro.ril.enable.a53", "1");
+    property_override("ro.ril.enable.pre_r8fd", "1");
+    property_override("ro.ril.enable.r8fd", "1");
+    property_override("ro.ril.telephony.mqanelements", "5");
 }
 
 void dualsim_properties(char const multisim_config[])
 {
-    property_set("persist.radio.multisim.config", multisim_config);
-    property_set("persist.radio.dont_use_dsd", "true");
-    property_set("ro.multisim.set_audio_params", "true");
-    property_set("ro.telephony.ril.config", "simactivation,sim2gsmonly");
+    property_override("persist.radio.multisim.config", multisim_config);
+    property_override("persist.radio.dont_use_dsd", "true");
+    property_override("ro.multisim.set_audio_params", "true");
+    property_override("ro.telephony.ril.config", "simactivation,sim2gsmonly");
 }
 
 void cdma_properties(char const default_cdma_sub[], char const default_network[])
 {
-    property_set("ro.telephony.default_cdma_sub", default_cdma_sub);
-    property_set("ro.telephony.default_network", default_network);
+    property_override("ro.telephony.default_cdma_sub", default_cdma_sub);
+    property_override("ro.telephony.default_network", default_network);
 
-    property_set("ro.ril.oem.ecclist", "110,112,119,120,911,999");
-    property_set("ro.ril.oem.normalcall.ecclist", "110,119,120,999");
-    property_set("ro.ril.oem.nosim.ecclist", "110,112,119,120,911,999,08,000,118,122");
-    property_set("ro.ril.gprsclass", "10");
-    property_set("ro.ril.set.mtusize", "1420");
+    property_override("ro.ril.oem.ecclist", "110,112,119,120,911,999");
+    property_override("ro.ril.oem.normalcall.ecclist", "110,119,120,999");
+    property_override("ro.ril.oem.nosim.ecclist", "110,112,119,120,911,999,08,000,118,122");
+    property_override("ro.ril.gprsclass", "10");
+    property_override("ro.ril.set.mtusize", "1420");
 
-    property_set("telephony.lteOnCdmaDevice", "1");
-    property_set("ro.ril.hsdpa.category", "10");
-    property_set("ro.ril.hsxpa", "2");
-    property_set("ro.ril.enable.sdr", "0");
-    property_set("ro.ril.disable.sync_pf", "1");
+    property_override("telephony.lteOnCdmaDevice", "1");
+    property_override("ro.ril.hsdpa.category", "10");
+    property_override("ro.ril.hsxpa", "2");
+    property_override("ro.ril.enable.sdr", "0");
+    property_override("ro.ril.disable.sync_pf", "1");
 }
 
 void gsm_properties(char const default_network[])
 {
-    property_set("ro.telephony.default_network", default_network);
+    property_override("ro.telephony.default_network", default_network);
 
-    property_set("telephony.lteOnGsmDevice", "1");
-    property_set("ro.ril.hsdpa.category", "24");
-    property_set("ro.ril.hsxpa", "4");
-    property_set("ro.ril.disable.cpc", "1");
-    property_set("ro.ril.enable.sdr", "1");
-    property_set("ro.ril.fast.dormancy.rule", "1");
+    property_override("telephony.lteOnGsmDevice", "1");
+    property_override("ro.ril.hsdpa.category", "24");
+    property_override("ro.ril.hsxpa", "4");
+    property_override("ro.ril.disable.cpc", "1");
+    property_override("ro.ril.enable.sdr", "1");
+    property_override("ro.ril.fast.dormancy.rule", "1");
 }
 
 void vendor_load_properties()
@@ -132,7 +130,7 @@ void vendor_load_properties()
         common_properties();
         dualsim_properties("dsds");
         gsm_properties("9,1");
-        property_set("ro.ril.ltefgi", "1594883712");
+        property_override("ro.ril.ltefgi", "1594883712");
         property_override("ro.build.description", "4.25.1402.6 CL480430 release-keys");
         property_override("ro.build.product", "htc_m8dug");
         for (const auto &source : ro_props_default_source_order) {
@@ -145,12 +143,12 @@ void vendor_load_properties()
         common_properties();
         dualsim_properties("dsds");
         gsm_properties("9,1");
-        property_set("ro.ril.ltefgi", "1578105984");
-        property_set("ro.ril.enable.dtm", "0");
-        property_set("ro.ril.enable.enhance.search", "1");
-        property_set("ro.ril.enable.managed.roaming", "1");
-        property_set("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
-        property_set("ro.ril.show.all.plmn", "1");
+        property_override("ro.ril.ltefgi", "1578105984");
+        property_override("ro.ril.enable.dtm", "0");
+        property_override("ro.ril.enable.enhance.search", "1");
+        property_override("ro.ril.enable.managed.roaming", "1");
+        property_override("ro.ril.n-roaming.mcclist", "219,204,234,272,222,240,232");
+        property_override("ro.ril.show.all.plmn", "1");
         property_override("ro.build.description", "6.16.401.101 CL675548 release-keys");
         property_override("ro.build.product", "htc_m8dug");
         for (const auto &source : ro_props_default_source_order) {
