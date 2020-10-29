@@ -15,6 +15,10 @@
 # limitations under the License.
 #
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/htc/m8d/m8d-vendor.mk)
 
