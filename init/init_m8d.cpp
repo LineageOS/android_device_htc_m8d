@@ -27,36 +27,11 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <vector>
-
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
-
-#include <android-base/properties.h>
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 
+#include "init_msm8974.h"
 #include "vendor_init.h"
-
-using android::base::GetProperty;
-
-std::vector<std::string> ro_props_default_source_order = {
-    "",
-    "odm.",
-    "product.",
-    "system.",
-    "vendor.",
-};
-
-void property_override(char const prop[], char const value[], bool add = true)
-{
-    prop_info *pi;
-
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else if (add)
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
 
 void common_properties()
 {
@@ -112,19 +87,7 @@ void vendor_load_properties()
     std::string bootmid;
     std::string device;
 
-    const auto set_ro_build_prop = [](const std::string &source,
-            const std::string &prop, const std::string &value) {
-        auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
-
-    const auto set_ro_product_prop = [](const std::string &source,
-            const std::string &prop, const std::string &value) {
-        auto prop_name = "ro.product." + source + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
-
-    bootmid = GetProperty("ro.boot.mid", "");
+    bootmid = android::base::GetProperty("ro.boot.mid", "");
     if (bootmid == "0P6B61000") {
         /* m8dug (china unicom) */
         common_properties();
@@ -133,11 +96,9 @@ void vendor_load_properties()
         property_override("ro.ril.ltefgi", "1594883712");
         property_override("ro.build.description", "4.25.1402.6 CL480430 release-keys");
         property_override("ro.build.product", "htc_m8dug");
-        for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
-            set_ro_product_prop(source, "device", "htc_m8dug");
-            set_ro_product_prop(source, "model", "HTC M8e");
-        }
+        set_ro_build_prop("fingerprint", "htc/htccn_chs_cu/htc_m8dug:5.0.2/LRX22G/480430.6:user/release-keys");
+        set_ro_product_prop("device", "htc_m8dug");
+        set_ro_product_prop("model", "HTC M8e");
     } else if (bootmid == "0P6B64000" || bootmid == "0P6B68000") {
         /* m8dug (international) */
         common_properties();
@@ -151,11 +112,9 @@ void vendor_load_properties()
         property_override("ro.ril.show.all.plmn", "1");
         property_override("ro.build.description", "6.16.401.101 CL675548 release-keys");
         property_override("ro.build.product", "htc_m8dug");
-        for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
-            set_ro_product_prop(source, "device", "htc_m8dug");
-            set_ro_product_prop(source, "model", "HTC One_M8 dual sim");
-        }
+        set_ro_build_prop("fingerprint", "htc/htc_europe/htc_m8dug:6.0/MRA58K/675548.101:user/release-keys");
+        set_ro_product_prop("device", "htc_m8dug");
+        set_ro_product_prop("model", "HTC One_M8 dual sim");
     } else if (bootmid == "0P6B41000") {
         /* m8dwg (china telecom) */
         common_properties();
@@ -163,13 +122,11 @@ void vendor_load_properties()
         cdma_properties("0,1", "10");
         property_override("ro.build.description", "6.22.1401.3 CL710963 release-keys");
         property_override("ro.build.product", "htc_m8dwg");
-        for (const auto &source : ro_props_default_source_order) {
-            set_ro_build_prop(source, "fingerprint", "htc/htccn_chs_ct/htc_m8dwg:6.0/MRA58K/710963.3:user/release-keys");
-            set_ro_product_prop(source, "device", "htc_m8dwg");
-            set_ro_product_prop(source, "model", "HTC M8d");
-        }
+        set_ro_build_prop("fingerprint", "htc/htccn_chs_ct/htc_m8dwg:6.0/MRA58K/710963.3:user/release-keys");
+        set_ro_product_prop("device", "htc_m8dwg");
+        set_ro_product_prop("model", "HTC M8d");
     }
 
-    device = GetProperty("ro.product.device", "");
+    device = android::base::GetProperty("ro.product.device", "");
     LOG(ERROR) << "Found bootmid '" << bootmid.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
 }
