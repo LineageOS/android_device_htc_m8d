@@ -59,4 +59,4 @@ TARGET_INIT_VENDOR_LIB := //device/htc/m8d:libinit_m8d
 TARGET_RECOVERY_DEVICE_MODULES += libinit_m8d
 
 # Inherit from the proprietary version
--include vendor/htc/m8d/BoardConfigVendor.mk
+include vendor/htc/m8d/BoardConfigVendor.mk
