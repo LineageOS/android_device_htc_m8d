@@ -28,7 +28,7 @@
 # against the traditional rules of inheritance).
 
 # Inherit from common m8-common
--include device/htc/m8-common/BoardConfigCommon.mk
+include device/htc/m8-common/BoardConfigCommon.mk
 
 # Model Ids (Dual SIM variants)
 # 0P6B41000 - Chinese (China Telecom) LTE/EV-DO/CDMA + GSM version
